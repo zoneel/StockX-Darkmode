@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>StockX Helper</title>
+
+</head>
+<style>
+    .popup {
+        min-width: 344px;
+        min-height: 188px;
+        background: #0a3810;
+        border-radius: 0px;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        color: white;
+        text-align: center;
+
+    }
+
+    .blue {
+        color: #000000;
+    }
+
+    p {
+        font-family: "Raleway", sans-serif;
+        font-size: 0.75rem;
+    }
+
+    .button {
+        background-color: #f1f1f1;
+        position: relative;
+        height: 2rem;
+        width: 4rem;
+        border-radius: 25px;
+        transition: 1s;
+        font-family: "Raleway", sans-serif;
+    }
+
+    .half {
+        position: absolute;
+        width: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+
+    .circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        background-color: rgb(5, 58, 33);
+        pointer-events: none;
+        transition: 1s;
+
+    }
+
+    @keyframes transformToBlue {
+        0% {
+            background-color: #FDFCA3;
+        }
+
+        100% {
+            background-color: #268126;
+        }
+    }
+
+    @keyframes transformToYellow {
+        0% {
+            background-color: #247e24;
+        }
+
+        100% {
+            background-color: #FDFCA3;
+        }
+    }
+
+    @keyframes moveCircleRight {
+        0% {
+            left: 0;
+            transform: translateX(0);
+            background-color: rgb(62, 173, 121);
+        }
+
+        100% {
+            left: 100%;
+            transform: translateX(-100%);
+            background-color: #909790;
+        }
+    }
+
+    @keyframes moveCircleLeft {
+        0% {
+            left: 100%;
+            transform: translateX(-100%);
+            background-color: #909790;
+        }
+
+        100% {
+            left: 0;
+            transform: translateX(0);
+            background-color: rgb(5, 58, 33);
+        }
+
+    }
+
+    .label {
+        font-size: 1rem;
+    }
+
+    #auth {
+        float: right;
+    }
+
+    #container {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+</style>
+
+<body>
+    <div class="popup">
+        <h1> Stock<span class="blue">X</span> Darkmode</h1>
+
+        <div id="container">
+            <div class="button">
+                <div class="half" style="left: 5px;">On</div>
+                <div class="half" style="right: 5px; text-align: right;">Off</div>
+                <div class="circle"></div>
+
+            </div>
+        </div>
+        <p id="auth"></p>
+
+
+    </div>
+
+    <script src="./popup.js">
+    </script>
+
+</body>
+
+</html>

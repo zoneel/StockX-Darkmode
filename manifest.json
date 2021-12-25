@@ -1,0 +1,34 @@
+{
+    "name": "StockX Darkmode",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "description": "",
+    "background": {
+        "scripts": [
+            "popup.js"
+        ],
+        "persistent": true
+    },
+    "icons": {
+        "16": "./images/16.png",
+        "24": "./images/24.png",
+        "32": "./images/32.png",
+        "64": "./images/64.png",
+        "128": "./images/128.png"
+      },
+    "browser_action": {
+        "default_title": "StockX Darkmode",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://stockx.com/*"],
+            "js": ["default.js"]
+        }
+    ],
+    "permissions": [
+        "https://*/*",
+        "http://*/*",
+        "tabs"
+    ]
+}
